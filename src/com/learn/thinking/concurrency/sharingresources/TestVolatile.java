@@ -6,6 +6,9 @@ import java.util.concurrent.TimeUnit;
 
 public class TestVolatile {
 
+
+    //can't stop
+//    private  boolean isStop;
     private volatile boolean isStop;
 
     public static void main(String[] args) {
