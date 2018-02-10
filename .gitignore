@@ -26,10 +26,6 @@ proguard/
 
 # Android Studio
 /.idea/libraries
-/.idea/workspace.xml
 /.idea/encodings.xml
-/.idea/misc.xml
 /.idea/gradle.xml
 /.idea/runConfigurations.xml
-/.idea/vcs.xml
-*.iml
