@@ -23,4 +23,23 @@ public class CollectionsFactory {
     public static <T> Queue<T> queue() {
         return new LinkedList<T>();
     }
+
+    public static <T> List<T> makeList(T... items) {
+        List<T> list = new ArrayList<>();
+        for(T item : items) {
+            list.add(item);
+        }
+        return list;
+    }
+
+    private static class LimitOfInference {
+        static void notWork(Map<String, ? extends Number> count) {}
+
+        public static void main(String[] args) {
+            // Does not compile in Java SE 5
+            notWork(CollectionsFactory.map());
+
+            notWork(CollectionsFactory.<String, Number>map());
+        }
+    }
 }
