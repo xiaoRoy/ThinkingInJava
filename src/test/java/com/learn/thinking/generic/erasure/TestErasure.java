@@ -1,5 +1,6 @@
 package com.learn.thinking.generic.erasure;
 
+import com.learn.thinking.generic.earsure.ClassTypeCapture;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -22,6 +23,12 @@ public class TestErasure {
         List<Animal> animals = new ArrayList<>();
         TypeVariable<? extends Class<? extends List>>[] typeParameters = animals.getClass().getTypeParameters();
         Assert.assertEquals("E", typeParameters[0].toString());
+    }
+
+    @Test
+    public void test_isInstance() {
+        ClassTypeCapture<Animal> capture = new ClassTypeCapture<>(Animal.class);
+        Assert.assertTrue(capture.isKind(new Animal()));
     }
 
     private class Animal {
