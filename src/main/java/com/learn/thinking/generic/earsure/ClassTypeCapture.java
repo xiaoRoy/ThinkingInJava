@@ -9,6 +9,7 @@ public class ClassTypeCapture<T> {
     }
 
     public boolean isKind(Object another) {
+        //another instanceof T
         return kind.isInstance(another);
     }
 }
