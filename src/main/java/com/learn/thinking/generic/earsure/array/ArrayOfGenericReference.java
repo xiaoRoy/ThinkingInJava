@@ -2,8 +2,6 @@ package com.learn.thinking.generic.earsure.array;
 
 public class ArrayOfGenericReference {
 
-    private static class Generic<T> {}
-
     private Generic<Integer>[] genericIntegerArray;
 
     public ArrayOfGenericReference() {
@@ -11,4 +9,5 @@ public class ArrayOfGenericReference {
         genericIntegerArray[0] = new Generic<Integer>();
     }
 
+    private static class Generic<T> {}
 }
