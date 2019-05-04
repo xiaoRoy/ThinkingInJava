@@ -1,4 +1,4 @@
-package com.learn.thinking.generic.boundary;
+package com.learn.thinking.generic.earsure;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

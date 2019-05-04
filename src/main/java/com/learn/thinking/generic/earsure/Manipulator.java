@@ -26,6 +26,10 @@ public class Manipulator<T extends Flyable> {
         public void fly() {
             this.flyable.fly();
         }
+
+        public Flyable getFlyable() {
+            return flyable;
+        }
     }
 
     private static class UsefulManipulator<T extends Flyable> {
