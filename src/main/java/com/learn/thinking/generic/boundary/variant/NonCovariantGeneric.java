@@ -1,11 +1,5 @@
 package com.learn.thinking.generic.boundary.variant;
 
-import com.learn.thinking.generic.boundary.variant.Holder.Apple;
-import com.learn.thinking.generic.boundary.variant.Holder.Fruit;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class NonCovariantGeneric {
 
     /*
@@ -19,18 +13,4 @@ public class NonCovariantGeneric {
     //List<Fruit> fruits = new ArrayList<Apple>();
     //Holder<Fruit> fruitHolder = new Holder<Apple>();
 
-
-    List<? extends Fruit> fruits = new ArrayList<Apple>();
-    Holder<? extends Fruit> fruitHolder = new Holder<Apple>();
-
-
-    private void addFruitToList(List<? extends Fruit> fruits) {
-//        fruits.add(new Fruit());
-//        fruits.add(new Apple());
-    }
-
-    private void addFruitToHolder(Holder<? extends Fruit> fruitHolder) {
-//        fruitHolder.setItem(new Fruit());
-//        fruitHolder.setItem(new Apple());
-    }
 }
