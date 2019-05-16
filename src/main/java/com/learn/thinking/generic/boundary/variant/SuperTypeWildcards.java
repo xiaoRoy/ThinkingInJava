@@ -14,6 +14,8 @@ public class SuperTypeWildcards {
     private Holder<? super Apple> appleHolder = new Holder<>();
 
     public SuperTypeWildcards() {
+        //List<Apple> is subtype of List<? super Apple>
+        // subtype is different with subclass
         appleList.add(new Apple());
         appleList.add(new RedApple());
         appleHolder.setItem(new RedApple());
@@ -23,5 +25,9 @@ public class SuperTypeWildcards {
         appleList.add(apple);
     }
 
+    public Holder.Fruit getTheFirstApple(List<? super Holder.Fruit> fruitList) {
+//        return fruitList.get(0);
+        return null;
+    }
 
 }
