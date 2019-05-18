@@ -23,6 +23,10 @@ public class CovariantGeneric {
 //        fruitHolder.setItem(new Apple());
     }
 
+    private Fruit getTheFirstFruit(List<? extends Fruit> fruits) {
+        return fruits.get(0);
+    }
+
     private void showCovariantGeneric() {
         Holder<Apple> appleHolder = new Holder<>();
         appleHolder.setItem(new Apple());
@@ -34,6 +38,7 @@ public class CovariantGeneric {
     }
 
     public Orange getOrangeFromHolder(Holder<? extends Fruit> fruitHolder) {
+        //It might throw a ClassCastException if the list is not a orange list.
         return (Orange) fruitHolder.getItem();
     }
 

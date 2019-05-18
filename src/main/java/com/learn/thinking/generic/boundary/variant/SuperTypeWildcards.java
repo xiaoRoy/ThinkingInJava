@@ -26,6 +26,8 @@ public class SuperTypeWildcards {
     }
 
     public Holder.Apple getTheFirstApple(List<? super Holder.Apple> appleList) {
+        List<? super Apple> one = new ArrayList<>();
+        List<? super Apple> another = new ArrayList<Holder.Fruit>();
 //        return appleList.get(0); compile error
         return null;
     }
