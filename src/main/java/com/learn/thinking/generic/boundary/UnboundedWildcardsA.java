@@ -3,7 +3,7 @@ package com.learn.thinking.generic.boundary;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnboundWildcardsA {
+public class UnboundedWildcardsA {
 
     private List rawList;
     private List<?> unboundedList;
