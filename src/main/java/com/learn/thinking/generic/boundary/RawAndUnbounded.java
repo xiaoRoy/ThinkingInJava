@@ -6,10 +6,24 @@ import java.applet.Applet;
 
 public class RawAndUnbounded {
 
+    private Holder rawHolder = new Holder();
+    private Holder<Long> qualifiedHolder = new Holder<>();
+    private Holder<?> unboundedHolder = new Holder<>();
+    private Holder<? extends Long> upperBoundedHolder = new Holder<>();
+    private Holder<? super Long> lowerBoundedHolder = new Holder<>();
+
     private void rawArgs(Holder holder, Object arg) {
         holder.setItem(arg);//warning, unchecked assignment
         holder.setItem(new StringBuilder());//warning, unchecked assignment
         Object result = holder.getItem();
+    }
+
+    private void doInvokeWithRaw() {
+        Long aLong = 1L;
+        rawArgs(rawHolder, aLong);
+        rawArgs(qualifiedHolder, aLong);
+        rawArgs(unboundedHolder, aLong);
+        rawArgs(upperBoundedHolder, aLong);
     }
 
     private void unboundedArgs(Holder<?> holder, Object arg) {
@@ -17,19 +31,46 @@ public class RawAndUnbounded {
         Object result = holder.getItem();
     }
 
+    private void doInvokeWithUnbounded() {
+        Long aLong = 1L;
+        unboundedArgs(rawHolder, aLong);
+        unboundedArgs(qualifiedHolder, aLong);
+        unboundedArgs(unboundedHolder, aLong);
+        unboundedArgs(upperBoundedHolder, aLong);
+    }
+
     private void exactStringArgs(Holder<String> holder, String arg) {
         holder.setItem(arg);
         String result = holder.getItem();
     }
 
-    private <T> void exactArgs(Holder<T> holder, T arg) {
-        holder.setItem(arg);
-        T result = holder.getItem();
+    private <T> T exactArgs(Holder<T> holder) {
+        return holder.getItem();
     }
 
-    private <T> void upperBoundedArgs(Holder<? extends T> holder, T arg) {
+    private void doGetFromExact() {
+        Object resultA = exactArgs(rawHolder);//unchecked assignment
+        Long resultB = exactArgs(qualifiedHolder);
+        Object resultC = exactArgs(unboundedHolder);//no warning
+        Long resultD = exactArgs(upperBoundedHolder);
+    }
+
+    private <T> T exactArgs(Holder<T> holder, T arg) {
+        holder.setItem(arg);
+        return holder.getItem();
+    }
+
+    private void doGetFromExactWithArgs() {
+        Long aLong = 44L;
+        Object resultA = exactArgs(rawHolder, aLong);//unchecked assignment
+        Long resultB = exactArgs(qualifiedHolder, aLong);
+//        Object resultC = exactArgs(unboundedHolder, aLong);
+//        Long resultD = exactArgs(upperBoundedHolder, aLong);
+    }
+
+    private <T> T upperBoundedArgs(Holder<? extends T> holder, T arg) {
 //        holder.setItem(arg); error
-        T result = holder.getItem();
+        return holder.getItem();
     }
 
     private <T> void lowerBoundedArgs(Holder<? super T> holder, T arg) {
@@ -37,6 +78,4 @@ public class RawAndUnbounded {
 //        T result = holder.getItem(); error
         Object result = holder.getItem();//OK, but type information has been lost:
     }
-
-
 }
