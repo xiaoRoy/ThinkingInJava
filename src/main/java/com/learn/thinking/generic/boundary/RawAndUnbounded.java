@@ -73,9 +73,25 @@ public class RawAndUnbounded {
         return holder.getItem();
     }
 
+    private void doGetFromUpperBoundedArgs() {
+        Long aLong = 34L;
+        Object resultA = upperBoundedArgs(rawHolder, aLong);//unchecked assignment
+        Long resultB = upperBoundedArgs(qualifiedHolder, aLong);
+        Object resultC = upperBoundedArgs(unboundedHolder, aLong);
+        Object resultD = upperBoundedArgs(upperBoundedHolder, aLong);
+    }
+
     private <T> void lowerBoundedArgs(Holder<? super T> holder, T arg) {
         holder.setItem(arg);
 //        T result = holder.getItem(); error
         Object result = holder.getItem();//OK, but type information has been lost:
+    }
+
+    private void doInvokeLowerBounded() {
+        Long aLong = 34L;
+        lowerBoundedArgs(rawHolder, aLong);//unchecked assignment
+        lowerBoundedArgs(qualifiedHolder, aLong);
+//        lowerBoundedArgs(unboundedHolder, aLong);
+//        lowerBoundedArgs(upperBoundedHolder, aLong);
     }
 }
