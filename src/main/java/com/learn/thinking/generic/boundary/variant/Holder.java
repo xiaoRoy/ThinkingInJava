@@ -4,6 +4,13 @@ public class Holder<T> {
 
     private T item;
 
+    public Holder(T item) {
+        this.item = item;
+    }
+
+    public Holder() {
+    }
+
     public T getItem() {
         return item;
     }
