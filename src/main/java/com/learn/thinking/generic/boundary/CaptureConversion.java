@@ -19,7 +19,7 @@ public class CaptureConversion {
         exactType(rawHolder);//Unchecked assignment
         unboundedType(rawHolder);
         Holder<?> stringHolder = new Holder<>("44");
-        unboundedType(stringHolder);
+        unboundedType(stringHolder);//"Double"
     }
 
 }
