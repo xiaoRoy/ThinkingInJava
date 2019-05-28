@@ -77,8 +77,8 @@ public class RawAndUnbounded {
         Long aLong = 34L;
         Object resultA = upperBoundedArgs(rawHolder, aLong);//unchecked assignment
         Long resultB = upperBoundedArgs(qualifiedHolder, aLong);
-        Object resultC = upperBoundedArgs(unboundedHolder, aLong);
-        Object resultD = upperBoundedArgs(upperBoundedHolder, aLong);
+        Object resultC = upperBoundedArgs(unboundedHolder, aLong);//OK, but can only Object
+        Long resultD = upperBoundedArgs(upperBoundedHolder, aLong);
     }
 
     private <T> void lowerBoundedArgs(Holder<? super T> holder, T arg) {
