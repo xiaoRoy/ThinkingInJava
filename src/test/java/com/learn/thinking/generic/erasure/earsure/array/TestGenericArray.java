@@ -1,8 +1,8 @@
 package com.learn.thinking.generic.erasure.earsure.array;
 
-import com.learn.thinking.generic.earsure.array.GenericArray;
-import com.learn.thinking.generic.earsure.array.GenericArraySecond;
-import com.learn.thinking.generic.earsure.array.GenericArrayWithTypeToken;
+import com.learn.thinking.generic.erasure.array.GenericArray;
+import com.learn.thinking.generic.erasure.array.GenericArraySecond;
+import com.learn.thinking.generic.erasure.array.GenericArrayWithTypeToken;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.learn.thinking.generic.earsure;
+package com.learn.thinking.generic.erasure;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

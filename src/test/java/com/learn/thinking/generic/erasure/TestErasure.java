@@ -1,12 +1,10 @@
 package com.learn.thinking.generic.erasure;
 
-import com.learn.thinking.generic.earsure.ClassTypeCapture;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TestErasure {

@@ -1,4 +1,4 @@
-package com.learn.thinking.generic.earsure;
+package com.learn.thinking.generic.erasure;
 
 public class Factory<T> {
     private T t;
