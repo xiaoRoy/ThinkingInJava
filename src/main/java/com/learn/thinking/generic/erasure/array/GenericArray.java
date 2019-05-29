@@ -1,14 +1,12 @@
-package com.learn.thinking.generic.earsure.array;
+package com.learn.thinking.generic.erasure.array;
 
-import java.lang.reflect.Array;
-
-public class GenericArrayWithTypeToken<T> {
+public class GenericArray<T> {
 
     private T[] array;
 
     @SuppressWarnings("unchecked")
-    public GenericArrayWithTypeToken(Class<T> type, int size) {
-        array = (T[]) Array.newInstance(type, size);
+    public GenericArray(int size) {
+        this.array = (T[])new Object[size];
     }
 
     public void put(int index, T item) {
@@ -22,4 +20,5 @@ public class GenericArrayWithTypeToken<T> {
     public T[] array() {
         return array;
     }
+
 }

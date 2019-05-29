@@ -1,4 +1,4 @@
-package com.learn.thinking.generic.earsure.array;
+package com.learn.thinking.generic.erasure.array;
 
 public class GenericArraySecond<T> {
 
