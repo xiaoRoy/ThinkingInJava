@@ -1,4 +1,4 @@
-package com.learn.thinking.generic.erasure.tutorial;
+package com.learn.oracletutorials.generic;
 
 import javax.annotation.Nullable;
 import java.util.List;

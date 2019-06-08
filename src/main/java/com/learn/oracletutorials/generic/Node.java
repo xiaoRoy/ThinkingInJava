@@ -1,4 +1,4 @@
-package com.learn.thinking.generic.erasure.tutorial;
+package com.learn.oracletutorials.generic;
 
 public class Node<T> {
     private T data;
