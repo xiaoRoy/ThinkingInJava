@@ -2,7 +2,6 @@ package com.learn.thinking.enumerated.basic;
 
 import org.junit.Assert;
 import org.junit.Test;
-import sun.security.provider.SHA;
 
 public class BasicEnumTest {
 
@@ -66,5 +65,21 @@ public class BasicEnumTest {
 
         Shrubbery ground = Shrubbery.valueOf("GROUND");
         Assert.assertSame(Shrubbery.GROUND, ground);
+    }
+
+    @Test
+    public void test_coinsValue() {
+        Assert.assertEquals(1, Coin.PENNY.getCents());
+        Assert.assertEquals(5, Coin.NICKEL.getCents());
+        Assert.assertEquals(10, Coin.DIME.getCents());
+        Assert.assertEquals(25, Coin.QUARTER.getCents());
+    }
+
+    @Test
+    public void test_coins_toString() {
+        Assert.assertEquals("1 cent", Coin.PENNY.toString());
+        Assert.assertEquals("5 cents", Coin.NICKEL.toString());
+        Assert.assertEquals("10 cents", Coin.DIME.toString());
+        Assert.assertEquals("25 cents", Coin.QUARTER.toString());
     }
 }
