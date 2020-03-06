@@ -1,8 +1,11 @@
 package com.learn.thinking.enumerated.basic;
 
+import javax.annotation.Nonnull;
+
 public enum Coin {
     PENNY(1), NICKEL(5), DIME(10), QUARTER(25);
-    private int cents;
+
+    private final int cents;
 
     private Coin(int cents) {
         this.cents = cents;

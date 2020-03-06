@@ -1,5 +1,7 @@
 package com.learn.thinking.enumerated.basic;
 
+import javax.annotation.Nonnull;
+
 public class Burrito {
 
     private final Spiciness degree;
@@ -8,6 +10,7 @@ public class Burrito {
         this.degree = degree;
     }
 
+    @Nonnull
     public String describe() {
         String result;
         switch (degree) {
